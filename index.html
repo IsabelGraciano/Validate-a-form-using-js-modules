@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form to validate</title>
+</head>
+
+<body>
+    <div class="forms-cards">
+        <section class="individual-form">
+            <form id="form" data-ig-validation novalidate>
+                <label for="name">
+                    <span>Name</span>
+                    <input type="text" name="text" id="text" data-ig-type="text" data-ig-minlength=5 data-ig-maxlength=8>
+                    <br><small class="error-message"></small><br>
+                </label>
+
+                <label for="lastName">
+                    <span>Last Name</span>
+                    <input type="text" name="text" id="text" data-ig-type="text" data-ig-minlength=5 data-ig-maxlength=8>
+                    <br><small class="error-message"></small><br>
+                </label>
+
+                <label for="email">
+                    <span>Email</span>
+                    <input type="text" name="email" id="email" data-ig-type="email">
+                    <br><small class="error-message"></small><br>
+                </label>
+
+                <label for="phone">
+                    <span>Phone</span>
+                    <input type="text" name="phone" id="phone" data-ig-type="number" data-ig-min=1111111 data-ig-max=9999999>
+                    <br><small class="error-message"></small><br>
+                </label>
+
+
+                <label for="date">
+                    <span>Birth date</span>
+                    <input type="text" name="date" id="date" data-ig-type="date">
+                    <br><small class="error-message"></small><br>
+                </label>
+
+                <label for="textarea">
+                    <span>Describe your job</span>
+                    <textarea name = "textarea" id="job" data-ig-type="textarea" data-ig-minlength=10 data-ig-maxlength=53 ></textarea>
+                    <br><small class="error-message"></small><br>
+                </label>
+                <!-- CHECKBOXES -->
+
+                <label for="checkbox"></label>
+                <span>Check the programming languages you can work with</span> <br>
+                <input type="checkbox" data-ig-type="checkbox" name="java">Java<br>
+                <input type="checkbox" data-ig-type="checkbox" name="cplus">C++<br>
+                <input type="checkbox" data-ig-type="checkbox" name="c">C<br>
+                <input type="checkbox" data-ig-type="checkbox" name="csharp">C#<br>
+                <input type="checkbox" data-ig-type="checkbox" name="python">Python<br>
+                <input type="checkbox" data-ig-type="checkbox" name="javascript">Javascript<br>
+                <small class="error-message" ig-catch-error="true"></small><br>
+                </label>
+            </form>
+
+            <form data-ig-validation>
+                <span>Form1</span>
+                <input type="text" data-ig-type="text">
+                <input type="text" data-ig-type="number">
+            </form>
+
+            <form>
+                <span>Form2</span>
+                <input type="text" data-ig-type="text">
+                <input type="text" data-ig-type="number">
+            </form>
+
+            <form>
+                <span>Form3</span>
+                <input type="text" data-ig-type="text">
+                <input type="text" data-ig-type="number">
+            </form>
+        </section>
+    </div>
+    <script type="module" src="src/main.js"></script>
+</body>
+
+</html>

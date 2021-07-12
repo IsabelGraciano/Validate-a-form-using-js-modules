@@ -1,0 +1,91 @@
+body {
+    font: 1em sans-serif;
+    width: 200px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+form {
+    max-width: 200px;
+}
+
+p * {
+    display: block;
+}
+
+
+/* Este es nuestro diseño para los campos no válidos */
+
+.input_invalid {
+    border-color: red;
+    border-width: 2px;
+}
+
+.input_valid {
+    border-color: green;
+    border-width: 2px;
+}
+
+body {
+    background-image: linear-gradient(to right, #84D6D2, #65C1BC, #107F88, #004E65);
+    display: grid;
+}
+
+.forms-cards {
+    display: grid;
+    /* grid-template-columns: 50% 50%;
+    justify-content: center;
+    align-items: center; */
+}
+
+.individual-form {
+    background-color: #FEEEDE;
+    height: 100%;
+    width: 130%;
+    border-radius: 10%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin-top: 15%;
+}
+
+.error-message {
+    text-align: left;
+    font-size: 10px;
+    color: red;
+}
+
+
+/*TOAST ALERT*/
+
+.toast {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 400px;
+    padding: 6px;
+    background: #cccccc;
+    color: #333333;
+    font-family: sans-serif;
+    text-align: center;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+}
+
+.toast--visible {
+    top: 20px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.toast--alert {
+    background: #65C1BC;
+    border-color: #004E65;
+    color: #ffffff;
+}
