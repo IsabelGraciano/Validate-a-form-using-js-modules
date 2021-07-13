@@ -1,8 +1,10 @@
-import { expression } from "./expression.js";
+// import { expression } from "./expression.js";
 
 const ValidateField = (input, displayMessage, expression) => {
     if (displayMessage == "notValid-chkb") {
         return 'select one option';
+    } else if (displayMessage == "successMsgCheckbox") {
+        return 'valid_input';
     } else if (displayMessage == "number_invalid") {
         return 'The value of this field must be between ' +
             input.getAttribute('data-ig-min') + ' and ' + input.getAttribute('data-ig-max') + ' characters'
@@ -35,12 +37,18 @@ export function getFormInputs(document) {
     }
 }
 
-export function listenerInputs(input, checkboxes, e) {
-    var targetName = input.getAttribute('data-ig-type'); //text, number, date etc
+export function listenerInputs(input, checkboxes) {
     var oneCheckboxSelected = false;
     var displayMessage = ""
     var text = expressions['text']
     var textarea = expressions['textarea']
+    var targetName = ""
+
+    if (input == "") {
+        targetName = checkboxes[0].getAttribute('data-ig-type'); //checkbox
+    } else {
+        targetName = input.getAttribute('data-ig-type'); //text, number, date etc
+    }
 
     const fieldTypes = {
         "text": (target, exreg) => {
@@ -104,5 +112,5 @@ export function listenerInputs(input, checkboxes, e) {
             }
         },
     };
-    return fieldTypes[targetName] ? fieldTypes[targetName](e.target, expressions[targetName]) : "This is not a valid field";
+    return fieldTypes[targetName] ? fieldTypes[targetName](input, expressions[targetName]) : "This is not a valid field";
 }

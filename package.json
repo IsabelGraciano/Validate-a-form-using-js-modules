@@ -14,6 +14,16 @@
         "@babel/core": "^7.14.6",
         "@babel/node": "^7.14.7",
         "@babel/preset-env": "^7.14.7",
-        "jest": "^27.0.6"
+        "@babel/preset-react": "^7.14.5",
+        "@testing-library/react": "^12.0.0",
+        "babel-jest": "^27.0.6",
+        "jest": "^27.0.6",
+        "jquery": "^3.6.0",
+        "react-test-renderer": "^17.0.2"
+    },
+    "jest": {
+        "setupFiles": [
+            "./src/setup-jest.js"
+        ]
     }
 }
